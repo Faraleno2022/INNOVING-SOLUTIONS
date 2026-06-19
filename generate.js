@@ -17,7 +17,7 @@ const navbar = `
   <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top scrolled">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="../index.html">
-        <span class="brand-logo"><i class="bi bi-hexagon-fill"></i></span>
+        <img src="../img/logo-mark.svg" alt="" class="brand-logo">
         <span class="brand-text">INNOVING<span class="brand-accent"> SOLUTIONS</span></span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Menu">
@@ -41,7 +41,7 @@ const footer = `
       <div class="row g-4">
         <div class="col-lg-4">
           <a class="navbar-brand d-flex align-items-center mb-3" href="../index.html">
-            <span class="brand-logo"><i class="bi bi-hexagon-fill"></i></span>
+            <img src="../img/logo-mark.svg" alt="" class="brand-logo">
             <span class="brand-text">INNOVING<span class="brand-accent"> SOLUTIONS</span></span>
           </a>
           <p class="footer-tagline">Construire | Connecter | Sécuriser</p>
@@ -104,6 +104,7 @@ function buildPage(service, index) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="${(service.metaDescription || service.desc).replace(/"/g, "&quot;")}">
   <title>${service.metaTitle || service.titre + " – INNOVING SOLUTIONS"}</title>
+  <link rel="icon" type="image/svg+xml" href="../img/logo-mark.svg">
   <link rel="canonical" href="${DOMAIN}/services/${service.slug}.html">
 
   <!-- Open Graph -->
