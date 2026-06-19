@@ -8,6 +8,8 @@ const SERVICES = [
     slug: "construction-batiments-connectes",
     icon: "bi-buildings",
     titre: "Construction de bâtiments modernes et connectés",
+    metaTitle: "Construction de bâtiments modernes & connectés | INNOVING SOLUTIONS",
+    metaDescription: "Construisez des bâtiments intelligents, économes en énergie et sécurisés : villas, immeubles, bureaux et Smart Building, de l'étude à la livraison.",
     desc: "Bâtiments modernes intégrant les dernières innovations pour plus de confort, de sécurité, d'efficacité énergétique et de valeur patrimoniale.",
     prestations: [
       "Études architecturales et techniques",
@@ -24,6 +26,8 @@ const SERVICES = [
     slug: "gestion-immobiliere-intelligente",
     icon: "bi-house-gear",
     titre: "Gestion immobilière intelligente",
+    metaTitle: "Gestion immobilière intelligente & digitale | INNOVING SOLUTIONS",
+    metaDescription: "Optimisez vos biens : suivi des loyers, contrats de location, copropriétés, maintenance et reporting. Une gestion immobilière moderne et rentable.",
     desc: "Accompagnement des propriétaires, investisseurs et promoteurs dans la gestion moderne et numérique de leurs biens immobiliers.",
     prestations: [
       "Gestion administrative et financière",
@@ -40,6 +44,8 @@ const SERVICES = [
     slug: "haute-technologie-informatique-domotique",
     icon: "bi-cpu",
     titre: "Haute technologie, informatique et domotique",
+    metaTitle: "Informatique, domotique & IoT pour bâtiments | INNOVING SOLUTIONS",
+    metaDescription: "Réseaux, serveurs, cloud, domotique, IoT et intelligence artificielle : rendez vos bâtiments et votre entreprise plus intelligents et productifs.",
     desc: "Intégration de technologies innovantes pour rendre les bâtiments, entreprises et infrastructures plus performants et plus intelligents.",
     prestations: [
       "Réseaux informatiques",
@@ -57,6 +63,8 @@ const SERVICES = [
     slug: "telecommunications-reseaux",
     icon: "bi-broadcast-pin",
     titre: "Télécommunications et réseaux",
+    metaTitle: "Télécoms & réseaux : fibre, Wi-Fi, VoIP | INNOVING SOLUTIONS",
+    metaDescription: "Déploiement de réseaux fibre optique, Wi-Fi professionnel, LAN/WAN et VoIP fiables et évolutifs pour entreprises, administrations et particuliers.",
     desc: "Déploiement d'infrastructures de communication fiables et performantes pour les entreprises, administrations et particuliers.",
     prestations: [
       "Réseaux fibre optique",
@@ -74,6 +82,8 @@ const SERVICES = [
     slug: "securite-electronique-videosurveillance",
     icon: "bi-camera-video",
     titre: "Sécurité électronique et vidéosurveillance",
+    metaTitle: "Vidéosurveillance & sécurité électronique | INNOVING SOLUTIONS",
+    metaDescription: "Caméras IP, contrôle d'accès, alarmes, détection incendie et supervision : protégez vos personnes et vos biens 24h/24, avec surveillance à distance.",
     desc: "Protection des personnes, des biens et des infrastructures grâce à des systèmes de sécurité de dernière génération.",
     prestations: [
       "Caméras IP et analogiques",
@@ -91,6 +101,8 @@ const SERVICES = [
     slug: "electricite-securite-electrique",
     icon: "bi-lightning-charge",
     titre: "Électricité et sécurité électrique (BT & HT)",
+    metaTitle: "Électricité BT/HT & énergie solaire | INNOVING SOLUTIONS",
+    metaDescription: "Installations électriques basse et haute tension aux normes : tableaux, éclairage, mise à la terre, groupes électrogènes et énergie solaire.",
     desc: "Installations électriques conformes aux normes internationales pour garantir la sécurité et la continuité des activités.",
     prestations: [
       "Études électriques",
@@ -109,6 +121,8 @@ const SERVICES = [
     slug: "geolocalisation-gps-suivi-vehicules",
     icon: "bi-geo-alt",
     titre: "Géolocalisation GPS et suivi de véhicules",
+    metaTitle: "Géolocalisation GPS & gestion de flotte | INNOVING SOLUTIONS",
+    metaDescription: "Suivez vos véhicules en temps réel : balises GPS, historique des trajets, géofencing, alertes et rapports. Sécurisez votre flotte et réduisez vos coûts.",
     desc: "Solutions de géolocalisation permettant de suivre et gérer les véhicules en temps réel.",
     prestations: [
       "Installation de balises GPS",
@@ -126,6 +140,8 @@ const SERVICES = [
     slug: "controle-gestion-carburant",
     icon: "bi-fuel-pump",
     titre: "Contrôle et gestion de carburant",
+    metaTitle: "Contrôle & gestion de carburant antivol | INNOVING SOLUTIONS",
+    metaDescription: "Capteurs de niveau, détection de vol et suivi en temps réel de la consommation de carburant : réduisez les fraudes et réalisez des économies.",
     desc: "Surveillance de la consommation de carburant afin de réduire les pertes et améliorer la rentabilité des opérations.",
     prestations: [
       "Capteurs de niveau de carburant",
@@ -142,6 +158,8 @@ const SERVICES = [
     slug: "maintenance-depannage-multitechnique",
     icon: "bi-tools",
     titre: "Maintenance et dépannage multitechnique",
+    metaTitle: "Maintenance & dépannage multitechnique | INNOVING SOLUTIONS",
+    metaDescription: "Maintenance préventive et corrective : électricité, informatique, télécoms, sécurité et bâtiment. Dépannage d'urgence et contrats sur mesure.",
     desc: "Maintenance préventive et corrective de toutes les installations techniques.",
     prestations: [
       "Maintenance électrique",
@@ -159,6 +177,8 @@ const SERVICES = [
     slug: "etudes-conseil-accompagnement-projets",
     icon: "bi-clipboard-data",
     titre: "Études, conseil et accompagnement de projets",
+    metaTitle: "Études, conseil & accompagnement de projets | INNOVING SOLUTIONS",
+    metaDescription: "Études de faisabilité, assistance à maîtrise d'ouvrage, audit technique, planification et contrôle qualité : vos projets sécurisés de A à Z.",
     desc: "Accompagnement des porteurs de projets depuis l'idée jusqu'à la réalisation complète.",
     prestations: [
       "Études de faisabilité",

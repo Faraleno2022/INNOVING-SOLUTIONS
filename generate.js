@@ -102,8 +102,17 @@ function buildPage(service, index) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="${service.desc.replace(/"/g, "&quot;")}">
-  <title>${service.titre} – INNOVING SOLUTIONS</title>
+  <meta name="description" content="${(service.metaDescription || service.desc).replace(/"/g, "&quot;")}">
+  <title>${service.metaTitle || service.titre + " – INNOVING SOLUTIONS"}</title>
+  <link rel="canonical" href="${DOMAIN}/services/${service.slug}.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="${(service.metaTitle || service.titre).replace(/"/g, "&quot;")}">
+  <meta property="og:description" content="${(service.metaDescription || service.desc).replace(/"/g, "&quot;")}">
+  <meta property="og:url" content="${DOMAIN}/services/${service.slug}.html">
+  <meta property="og:locale" content="fr_FR">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
