@@ -232,29 +232,30 @@
           </div>
         </div>
         <div class="col-lg-7" data-reveal>
-          <form id="contactForm" class="contact-form" novalidate>
+          <!-- Formspree : remplacez VOTRE_ID_FORMSPREE par votre identifiant (ex: xayzabcd) -->
+          <form id="contactForm" class="contact-form" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST" novalidate>
             <div class="row g-3">
               <div class="col-md-6">
                 <label for="nom" class="form-label">Nom complet *</label>
-                <input type="text" class="form-control" id="nom" required>
+                <input type="text" class="form-control" id="nom" name="nom" required>
                 <div class="invalid-feedback">Veuillez indiquer votre nom.</div>
               </div>
               <div class="col-md-6">
                 <label for="email" class="form-label">Email *</label>
-                <input type="email" class="form-control" id="email" required>
+                <input type="email" class="form-control" id="email" name="email" required>
                 <div class="invalid-feedback">Veuillez indiquer un email valide.</div>
               </div>
               <div class="col-md-6">
                 <label for="tel" class="form-label">Téléphone</label>
-                <input type="tel" class="form-control" id="tel">
+                <input type="tel" class="form-control" id="tel" name="telephone">
               </div>
               <div class="col-md-6">
                 <label for="sujet" class="form-label">Service concerné</label>
-                <select class="form-select" id="sujet"></select>
+                <select class="form-select" id="sujet" name="service"></select>
               </div>
               <div class="col-12">
                 <label for="message" class="form-label">Votre message *</label>
-                <textarea class="form-control" id="message" rows="5" required></textarea>
+                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                 <div class="invalid-feedback">Veuillez saisir votre message.</div>
               </div>
               <div class="col-12">

@@ -138,14 +138,16 @@ function initBackToTop() {
   btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 }
 
-/* ---------- Validation du formulaire de contact ---------- */
+/* ---------- Formulaire de contact (envoi via Formspree) ---------- */
 function initContactForm() {
   const form = document.getElementById("contactForm");
   const alert = document.getElementById("formAlert");
   if (!form) return;
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    // Validation côté client
     let valid = true;
     ["nom", "email", "message"].forEach(id => {
       const field = document.getElementById(id);
@@ -154,15 +156,47 @@ function initContactForm() {
       field.classList.toggle("is-invalid", !ok);
       if (!ok) valid = false;
     });
-
     if (!valid) {
       showAlert(alert, "Veuillez corriger les champs en surbrillance.", "danger");
       return;
     }
 
     const nom = document.getElementById("nom").value.trim();
-    showAlert(alert, `Merci ${nom} ! Votre demande a bien été enregistrée. Nous vous recontacterons rapidement.`, "success");
-    form.reset();
+    const endpoint = form.getAttribute("action") || "";
+
+    // Tant que l'identifiant Formspree n'est pas configuré → mode démo
+    if (endpoint.includes("VOTRE_ID_FORMSPREE") || !endpoint) {
+      showAlert(alert, `Merci ${nom} ! (Mode démo : configurez Formspree pour recevoir réellement les messages.)`, "success");
+      form.reset();
+      return;
+    }
+
+    const btn = form.querySelector("button[type=submit]");
+    const btnHtml = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Envoi en cours…';
+
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      });
+      if (res.ok) {
+        showAlert(alert, `Merci ${nom} ! Votre demande a bien été envoyée. Nous vous recontacterons rapidement.`, "success");
+        form.reset();
+      } else {
+        const data = await res.json().catch(() => ({}));
+        const msg = data.errors ? data.errors.map(er => er.message).join(", ")
+                                : "Une erreur est survenue. Réessayez ou écrivez-nous directement.";
+        showAlert(alert, msg, "danger");
+      }
+    } catch (err) {
+      showAlert(alert, "Connexion impossible. Vérifiez votre réseau et réessayez.", "danger");
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = btnHtml;
+    }
   });
 
   form.querySelectorAll(".form-control").forEach(f => {
