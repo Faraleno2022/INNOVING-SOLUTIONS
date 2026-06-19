@@ -449,61 +449,11 @@ a { text-decoration: none; }
 /* ===== RESPONSIVE ===== */
 @media (max-width: 991px) {
   #mainNav { background: var(--navy); }
-  #mainNav.scrolled { padding: .55rem 0; }
   #mainNav .navbar-collapse { background: var(--navy); padding: 1rem; border-radius: 12px; margin-top: .6rem; }
-  #mainNav .nav-link { margin: .2rem 0; }
   .pillar:nth-child(2) { margin-left: 0; }
   .footer-bottom { justify-content: center; text-align: center; }
-
-  /* HERO : centré, logo au-dessus du texte */
-  .hero { min-height: auto; }
-  .hero-content { padding: 6.5rem 0 3.5rem; text-align: center; }
-  .hero .row > div:last-child { order: -1; }           /* logo en premier */
-  .hero-lead { margin-left: auto; margin-right: auto; }
-  .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; }
-  .hero-actions .btn { margin: 0; }
-  .hero-logo { max-width: 240px; margin: 0 auto 1.6rem; }
-
-  /* Pages service : hero un peu plus compact */
-  .service-hero { padding: 7.5rem 0 3rem; }
-  .service-hero p { margin-left: auto; margin-right: auto; }
 }
-
 @media (max-width: 575px) {
-  .section { padding: 3.5rem 0; }
+  .section { padding: 4rem 0; }
   .adv-grid { grid-template-columns: 1fr; }
-
-  /* Navbar plus compacte */
-  .brand-text { font-size: 1rem; }
-  .brand-logo { width: 40px; height: 40px; }
-
-  /* Hero */
-  .hero-content { padding: 6rem 0 3rem; }
-  .hero-badge { font-size: .78rem; padding: .35rem .85rem; }
-  .hero-logo { max-width: 200px; }
-  .hero-actions { flex-direction: column; }
-  .hero-actions .btn { width: 100%; }
-
-  /* Stats : 2 par ligne, libellés compacts */
-  .stat-label { font-size: .8rem; }
-
-  /* Sections / cartes */
-  .service-card { padding: 1.6rem 1.3rem; }
-  .why-card { padding: 1.6rem 1.3rem; }
-  .pillar { padding: 1.4rem 1.5rem; }
-
-  /* Footer : colonnes empilées et centrées */
-  .footer { text-align: center; padding: 3rem 0 1.5rem; }
-  .footer .row > [class*="col-"] { flex: 0 0 100%; max-width: 100%; margin-bottom: 1.2rem; }
-  .footer .navbar-brand { justify-content: center; }
-  .footer-bottom { gap: .3rem; }
-
-  /* Contact */
-  .contact-form { padding: 1.4rem; }
-  .social { justify-content: center; }
-
-  /* Détail service */
-  .detail-card { padding: 1.6rem; }
-  .breadcrumb-bar { font-size: .8rem; }
-  .cta-band { padding: 3.5rem 0; }
 }
