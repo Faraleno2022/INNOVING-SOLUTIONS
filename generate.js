@@ -8,6 +8,7 @@ const path = require("path");
 
 const SERVICES = require("./js/data.js");
 const OUT_DIR = path.join(__dirname, "services");
+const DOMAIN = "https://innovingsolutions.com";
 
 if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
 
@@ -221,3 +222,31 @@ SERVICES.forEach((service, index) => {
   console.log(`✓ services/${service.slug}.html`);
 });
 console.log(`\n${count} pages de services générées avec succès.`);
+
+/* --- sitemap.xml --- */
+const today = new Date().toISOString().slice(0, 10);
+const urls = [
+  { loc: `${DOMAIN}/`, priority: "1.0" },
+  ...SERVICES.map(s => ({ loc: `${DOMAIN}/services/${s.slug}.html`, priority: "0.8" }))
+];
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(u => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>${u.priority}</priority>
+  </url>`).join("\n")}
+</urlset>
+`;
+fs.writeFileSync(path.join(__dirname, "sitemap.xml"), sitemap, "utf8");
+console.log("✓ sitemap.xml");
+
+/* --- robots.txt --- */
+const robots = `User-agent: *
+Allow: /
+
+Sitemap: ${DOMAIN}/sitemap.xml
+`;
+fs.writeFileSync(path.join(__dirname, "robots.txt"), robots, "utf8");
+console.log("✓ robots.txt");
