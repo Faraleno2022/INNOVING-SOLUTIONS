@@ -102,7 +102,7 @@ a { text-decoration: none; }
   background-size: 48px 48px;
   mask-image: radial-gradient(circle at 50% 40%, #000 0%, transparent 75%);
 }
-.hero-content { position: relative; z-index: 2; padding: 7rem 0 5rem; }
+.hero-content { position: relative; z-index: 2; padding-top: 7rem; padding-bottom: 5rem; }
 .hero-badge {
   display: inline-block;
   background: rgba(245,181,30,.15);
@@ -456,6 +456,10 @@ a { text-decoration: none; }
   #mainNav .navbar-collapse { background: var(--navy); padding: 1rem; border-radius: 12px; margin-top: .6rem; }
   .pillar:nth-child(2) { margin-left: 0; }
   .footer-bottom { justify-content: center; text-align: center; }
+
+  /* Les grandes gouttières g-5 débordent du conteneur sur petit écran :
+     on les ramène à une valeur qui s'aligne au conteneur (plus de contenu coupé) */
+  .row.g-5 { --bs-gutter-x: 1.5rem; }
 }
 @media (max-width: 575px) {
   .section { padding: 4rem 0; }
