@@ -20,11 +20,15 @@
 
 * { scroll-behavior: smooth; }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   font-family: 'Inter', system-ui, sans-serif;
   color: var(--ink);
   background: var(--white);
-  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, .navbar-brand { font-family: 'Poppins', sans-serif; }
