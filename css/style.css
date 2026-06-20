@@ -61,7 +61,7 @@ a { text-decoration: none; }
 /* Garde la marque et le bouton hamburger sur une seule ligne (evite le retour
    a la ligne du toggler sur certains Android plus etroits). */
 #mainNav > .container { flex-wrap: nowrap; }
-#mainNav .navbar-brand { min-width: 0; overflow: hidden; }
+#mainNav .navbar-brand { min-width: 0; }
 #mainNav .navbar-toggler { flex: none; }
 #mainNav .nav-link {
   color: rgba(255,255,255,.85);
@@ -460,7 +460,13 @@ a { text-decoration: none; }
 /* ===== RESPONSIVE ===== */
 @media (max-width: 991px) {
   #mainNav { background: var(--navy); }
-  #mainNav .navbar-collapse { background: var(--navy); padding: 1rem; border-radius: 12px; margin-top: .6rem; }
+  #mainNav .navbar-collapse { background: var(--navy); padding: .5rem 1rem; border-radius: 12px; margin-top: .6rem; }
+  /* Menu mobile plus confortable : liens pleine largeur, espaces de frappe
+     plus grands et separateurs discrets entre les entrees. */
+  #mainNav .navbar-nav .nav-link { margin: 0; padding: .7rem .25rem; }
+  #mainNav .navbar-nav .nav-item + .nav-item .nav-link { border-top: 1px solid rgba(255,255,255,.08); }
+  #mainNav .nav-link::after { display: none; }
+  .btn-contact { display: inline-block; margin: .6rem 0 .2rem; text-align: center; }
   .pillar:nth-child(2) { margin-left: 0; }
   .footer-bottom { justify-content: center; text-align: center; }
 
@@ -471,4 +477,11 @@ a { text-decoration: none; }
 @media (max-width: 575px) {
   .section { padding: 4rem 0; }
   .adv-grid { grid-template-columns: 1fr; }
+  /* En portrait, on reduit la marque pour qu'elle reste entierement visible. */
+  .brand-text { font-size: 1rem; letter-spacing: .3px; }
+  .brand-logo { width: 40px; height: 40px; margin-right: 8px; }
+}
+@media (max-width: 360px) {
+  .brand-text { font-size: .9rem; }
+  .brand-logo { width: 36px; height: 36px; }
 }
