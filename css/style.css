@@ -58,10 +58,10 @@ a { text-decoration: none; }
 }
 .brand-text { font-weight: 800; letter-spacing: .5px; color: #fff; font-size: 1.15rem; white-space: nowrap; }
 .brand-accent { color: var(--accent); }
-/* Garde la marque et le bouton hamburger sur une seule ligne (evite le retour
-   a la ligne du toggler sur certains Android plus etroits). */
-#mainNav > .container { flex-wrap: nowrap; }
-#mainNav .navbar-brand { min-width: 0; }
+/* La marque et le bouton hamburger restent sur la 1re ligne, mais le menu
+   deroule peut passer en dessous (flex-basis:100% de Bootstrap) et s'afficher
+   verticalement. On garde donc le wrap par defaut sur le conteneur. */
+#mainNav .navbar-brand { min-width: 0; flex: 0 1 auto; }
 #mainNav .navbar-toggler { flex: none; }
 #mainNav .nav-link {
   color: rgba(255,255,255,.85);
