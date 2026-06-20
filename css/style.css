@@ -56,8 +56,13 @@ a { text-decoration: none; }
   flex: none;
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
-.brand-text { font-weight: 800; letter-spacing: .5px; color: #fff; font-size: 1.15rem; }
+.brand-text { font-weight: 800; letter-spacing: .5px; color: #fff; font-size: 1.15rem; white-space: nowrap; }
 .brand-accent { color: var(--accent); }
+/* Garde la marque et le bouton hamburger sur une seule ligne (evite le retour
+   a la ligne du toggler sur certains Android plus etroits). */
+#mainNav > .container { flex-wrap: nowrap; }
+#mainNav .navbar-brand { min-width: 0; overflow: hidden; }
+#mainNav .navbar-toggler { flex: none; }
 #mainNav .nav-link {
   color: rgba(255,255,255,.85);
   font-weight: 500;
